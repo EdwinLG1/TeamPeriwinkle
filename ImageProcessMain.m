@@ -47,3 +47,30 @@ J = imadjust(picture,[avg-n*rms_contrast avg+n*rms_contrast],[]);
 
 figure(2),
 imshow(J);
+
+
+%% Adjusted contrast to fit that 0 - 1 range, based on standard deviation
+m = [0 0];
+m(1) = abs((avg - 0.25)./rms_contrast);
+m(2) = abs((0.75-avg)./rms_contrast);
+
+x = min(m);
+
+Idouble = im2double(picture);
+avg = mean2(Idouble);
+
+X = imadjust(picture, [0.5-x*rms_contrast 0.5+x*rms_contrast], []);
+
+avg2 = mean2(X);
+
+figure(3),
+imshow(X);
+
+
+%% Compare to just using function
+
+%RGB2 = imadjust(picture,[.2 .3 0; .6 .7 1],[]);
+Y = imadjust(picture, [0.25 0.75], []);
+avg3 = mean2(Y);
+figure(4),
+imshow(Y);
