@@ -18,15 +18,15 @@ g2 = image2(:,:,2);
 b2 = image2(:,:,3);
 
 %Finding dimensions of images
-w1 = uint8(size(image1, 1));
-h1 = uint8(size(image1, 2));
+w1 = size(image1, 1);
+h1 = size(image1, 2);
 
 w2 = size(image2, 1);
 h2 = size(image2, 2);
 
-%% Initializing New Stitching Array
+%% Initializing/Filling New Stitching Array
 %Making Empty Array for 
-distance = 255;
+distance = 256;
 bigger_width = 0;
 bigger_height = 0;
 
@@ -48,10 +48,20 @@ start_point_w2 = w1+distance;
 im2double(image1)
 stitched_image = zeros(h3, w3, 3);
 
-stitched_image(1:h1,1:w1,:) = image1(:,:,:);
 
-for i=1:w2
-    stitched_image(:,i+w1+distance - 1,:) = image2(:,i,:);
+if h1 == bigger_height
+    stitched_image(:,1:w1,:) = image1(:,:,:);
+    
+    for i=1:w2
+        stitched_image(1:h2,i+w1+distance,:) = image2(:,i,:);
+    end
+
+else
+    stitched_image(1:h1,1:w1,:) = image1(:,:,:);
+    
+    for i=1:w2
+        stitched_image(:,i+w1+distance,:) = image2(:,i,:);
+    end
 end
 
 
