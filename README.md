@@ -4,8 +4,8 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 
 
 # How it Works
-1.) Take pictures on with iphone camera and send them to computer
-2.) run shell script
+1.) Take pictures on with iphone camera and send them to computer <br />
+2.) run shell script <br />
 3.) covert .HEIC to .jpg Using the following command (sips -s format jpeg Mille.heic --out myfile.jpg)
 4.) Run mat lab image preprocessing with matlab Command (______)
 5.) Run image io paint module using the following command (________)
