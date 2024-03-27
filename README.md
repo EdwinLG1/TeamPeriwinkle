@@ -11,5 +11,5 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 5.) Run image io paint module using the following command (iopaint run --model=lama --device=cpu --image={path to input} --mask={path to mask} --output={path to output dir}) <br />
 
 # Notes
-.) input image must be transparent where it will be masked
-.) mask should be white where masking, black otherwise
+* input image must be transparent where it will be masked
+* mask should be white where masking, black otherwise
