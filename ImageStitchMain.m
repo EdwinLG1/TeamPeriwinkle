@@ -30,7 +30,6 @@ distance = 128;
 bigger_height = 0;
 other_height = 0;
 
-
 if h1 >= h2
     bigger_height = h1;
     other_height = h2;
@@ -39,34 +38,50 @@ else
     other_height = h1;
 end
 
+%%
 w3 = w1 + w2 + distance;
 h3 = bigger_height;
 start_point_w2 = w1+distance;
 stitched_image = uint8(zeros(h3, w3, 3));
-
+mask = double(ones(h3,w3));
+A = double(zeros(h3,w3));
 
 if h1 == bigger_height
     stitched_image(:,1:w1,:) = image1(:,:,:);
-    
+    mask(:,1:w1) = 0;
+    A(:,1:w1) = 1;
     for i=1:w2
         stitched_image(1:h2,i+w1+distance,:) = image2(:,i,:);
+        mask(1:h2, i+w1+distance) = 0;
+        A(1:h2, i+w1+distance) = 1;
     end
 
 else
     stitched_image(1:h1,1:w1,:) = image1(:,:,:);
-    
+    mask(1:h1,1:w1) = 0;
+    A(1:h1, 1:w1) = 1;
     for i=1:w2
         stitched_image(:,i+w1+distance,:) = image2(:,i,:);
+        mask(:,i+w1+distance) = 0;
+        A(:,i+w1+distance) = 1;
     end
 end
 
-
+%%
 
 figure(3),
 imshow(stitched_image);
-imwrite(stitched_image, "Stitched_Image.png", "png");
+imwrite(stitched_image, 'Stitched_Image.png', 'Alpha', A);
 
+figure(4),
+imshow(mask);
+imwrite(mask, 'Mask.png', 'png');
 
+%%
+img = imread("Stitched_Image.png");
+
+figure(5),
+imshow(img);
 
 
 
