@@ -1,7 +1,7 @@
 %% Setup
 %Assuming input is normalized, preprocessed images
-image1 = imread("octo256.jpg");
-image2 = imread("Kirby.png");
+image1 = imread("low_contrast.jpg");
+image2 = imread("octo256.jpg");
 
 figure(1),
 imshow(image1);
@@ -18,35 +18,31 @@ g2 = image2(:,:,2);
 b2 = image2(:,:,3);
 
 %Finding dimensions of images
-w1 = size(image1, 1);
-h1 = size(image1, 2);
+w1 = size(image1, 2);
+h1 = size(image1, 1);
 
-w2 = size(image2, 1);
-h2 = size(image2, 2);
+w2 = size(image2, 2);
+h2 = size(image2, 1);
 
 %% Initializing/Filling New Stitching Array
 %Making Empty Array for 
-distance = 256;
-bigger_width = 0;
+distance = 128;
 bigger_height = 0;
+other_height = 0;
 
-if w1 >= w2
-    bigger_width = w1;
-else 
-    bigger_width = w2;
-end
 
 if h1 >= h2
     bigger_height = h1;
+    other_height = h2;
 else 
     bigger_height = h2;
+    other_height = h1;
 end
 
-w3 = 2 * bigger_width + distance;
+w3 = w1 + w2 + distance;
 h3 = bigger_height;
 start_point_w2 = w1+distance;
-im2double(image1)
-stitched_image = zeros(h3, w3, 3);
+stitched_image = uint8(zeros(h3, w3, 3));
 
 
 if h1 == bigger_height
@@ -67,9 +63,9 @@ end
 
 
 figure(3),
-imshow(stitched_image)
-%stitched_image(0:Height_px_img1,0:Width_px_img1,:) = im2double(image1);
-% stitched_image(end-Height_px_img2:end,end-Width_px_img2:end,:) = im2double(image2)
+imshow(stitched_image);
+imwrite(stitched_image, "Stitched_Image.png", "png");
+
 
 
 
