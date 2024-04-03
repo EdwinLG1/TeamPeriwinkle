@@ -7,9 +7,24 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 1.) Take pictures on with iphone camera and send them to computer <br />
 2.) run shell script <br />
 3.) covert .HEIC to .jpg Using the following command (sips -s format jpeg Mille.heic --out myfile.jpg) <br />
-4.) Run mat lab image preprocessing with matlab Command (______) <br />
-5.) Run image io paint module using the following command (iopaint run --model=lama --device=cpu --image={path to input} --mask={path to mask} --output={path to output dir}) <br />
+4.) Run MATLAB image preprocessing with Command (______) <br />
+5.) Run image io-paint module using the following command (iopaint run --model=lama --device=cpu --image={path to input} --mask={path to mask} --output={path to output dir}) <br />
 
 # Notes
 * input image must be transparent where it will be masked
 * mask should be white where masking, black otherwise
+
+## Running MATLAB as script
+### Windows
+1.) Open Windows Powershell <br />
+2.) Check MATLAB and current directory are added to user or system environmental path: <br />
+* <code>echo $env:PATH</code>
+
+2.5.) Add path <br />
+* <code>$env:PATH += ';C\..\working_directory\'</code>
+
+3.) Run matlab file: <br />
+* <code>& matlab -batch "filename"</code>
+
+
+* Take note that the script filename does NOT include the .m file extension
