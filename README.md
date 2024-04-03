@@ -6,9 +6,15 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 # How it Works
 1.) Take pictures on with iphone camera and send them to computer <br />
 2.) run shell script <br />
-3.) covert .HEIC to .jpg Using the following command (sips -s format jpeg Mille.heic --out myfile.jpg) <br />
-4.) Run MATLAB image preprocessing with Command (______) <br />
-5.) Run image io-paint module using the following command (iopaint run --model=lama --device=cpu --image={path to input} --mask={path to mask} --output={path to output dir}) <br />
+3.) covert .HEIC to .jpg Using the following command: <br />
+
+* <code>(sips -s format jpeg Mille.heic --out myfile.jpg)</code> <br />
+4.) Run MATLAB image preprocessing with:
+
+* <code>Command (______) </code><br />
+5.) Run image io-paint module using the following command:
+
+* <code>(iopaint run --model=lama --device=cpu --image={path to input} --mask={path to mask} --output={path to output dir})</code> <br />
 
 # Notes
 * input image must be transparent where it will be masked
