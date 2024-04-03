@@ -9,6 +9,8 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 3.) covert .HEIC to .jpg Using the following command: <br />
 
 * <code>sips -s format jpeg Mille.heic --out myfile.jpg</code> <br />
+* for multiple images: <code> for i in *.HEIC; do sips -s format jpeg -s formatOptions 70 "${i}" --out "${i%HEIC}jpg"; done </code>
+
 4.) Run MATLAB image preprocessing with:
 
 * <code>Command (______) </code><br />
