@@ -27,14 +27,14 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 * <code>& matlab -batch "filename"</code>
 
 ### Mac
-1.) Open terminal <br />
-2.) Run echo $PATH to see your path variable <br />
-3.) If ~/MATLAB_R2023b.app/bin is not added to your path then add it <br />
-3.5) vim .zshrc add the following line <br />
+1.) Open terminal (newest versions will default to <code>.zsh</code>) <br />
+2.) Run <code>echo $PATH</code> to see your path variables <br />
+3.) Check <code>~/MATLAB_R2023b.app/bin</code> is in your system path. If not: <br />
+3.5) <code>vim .zshrc</code> add the following line <br />
 * <code> export PATH="$PATH:/Applications/MATLAB_R2023b.app/bin" </code> <br />
-4.) reload shell for the change to take effect <br />
 
+4.) Reload shell for the change to take effect <br />
 5.) Run matlab file: <br />
 * <code> matlab -nodisplay -nosplash -r "run('/Users/alecplano/Desktop/test.m'); exit;" </code> <br />
 
-* Take note that the script filename can include the .m file extension for mac
+* Take note that the script filename can include the .m file extension for MacOS
