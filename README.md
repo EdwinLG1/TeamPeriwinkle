@@ -14,6 +14,7 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 4.) Run MATLAB image preprocessing with:
 
 * <code>Command (______) </code><br />
+
 5.) Run image io-paint module using the following command:
 
 * <code>(iopaint run --model=lama --device=cpu --image={path to input} --mask={path to mask} --output={path to output dir})</code> <br />
