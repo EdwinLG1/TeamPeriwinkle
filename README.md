@@ -8,7 +8,7 @@ This is the main hub for any files pertaining to Team Periwinkle's Senior Design
 2.) run shell script <br />
 3.) covert .HEIC to .jpg Using the following command: <br />
 
-* <code>(sips -s format jpeg Mille.heic --out myfile.jpg)</code> <br />
+* <code>sips -s format jpeg Mille.heic --out myfile.jpg</code> <br />
 4.) Run MATLAB image preprocessing with:
 
 * <code>Command (______) </code><br />
