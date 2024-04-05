@@ -1,7 +1,7 @@
 %% Setup
 %Assuming input is normalized, preprocessed images
-image1 = imread("low_contrast.jpg");
-image2 = imread("octo256.jpg");
+image1 = imread("image1.jpg");
+image2 = imread("image2.jpg");
 
 figure(1),
 imshow(image1);
@@ -26,7 +26,7 @@ h2 = size(image2, 1);
 
 %% Initializing/Filling New Stitching Array
 %Making Empty Array for 
-distance = 128;
+distance = 256;
 bigger_height = 0;
 other_height = 0;
 

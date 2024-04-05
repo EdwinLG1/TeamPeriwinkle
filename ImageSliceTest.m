@@ -1,4 +1,4 @@
-img = imread("Stitched_Image.png");
+img = imread("testImage.png");
 
 figure(1),
 imshow(img);
@@ -25,6 +25,8 @@ end
 
 figure(2),
 imshow(img1);
+imwrite(img1, 'image1.jpg');
 
 figure(3),
 imshow(img2);
+imwrite(img2, 'image2.jpg');
