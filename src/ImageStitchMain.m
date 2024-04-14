@@ -1,7 +1,20 @@
 %% Setup
 %Assuming input is normalized, preprocessed images
-image1 = imread("image1.jpg");
-image2 = imread("image2.jpg");
+path1 = importdata('image1.txt');
+disp(class(path1{1}));
+disp(path1{1});
+path2 = importdata('image2.txt');
+disp(class(path2{1}));
+disp(path2{1});
+
+image1 = imread(convertCharsToStrings(path1(1)));
+image2 = imread(convertCharsToStrings(path2(1)));
+
+image1 = imrotate(image1,270);
+image2 = imrotate(image2,270);
+
+image1 = imresize(image1,[800,600]);
+image2 = imresize(image2,[800,600]);
 
 figure(1),
 imshow(image1);
@@ -82,11 +95,6 @@ img = imread("Stitched_Image.png");
 
 figure(5),
 imshow(img);
-
-
-
-
-
 
 
 
