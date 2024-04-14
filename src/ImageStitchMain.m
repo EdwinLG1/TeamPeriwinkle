@@ -13,6 +13,9 @@ image2 = imread(convertCharsToStrings(path2(1)));
 image1 = imrotate(image1,270);
 image2 = imrotate(image2,270);
 
+image1 = imresize(image1,[800,600]);
+image2 = imresize(image2,[800,600]);
+
 figure(1),
 imshow(image1);
 figure(2),
